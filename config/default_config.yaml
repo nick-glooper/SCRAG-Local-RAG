@@ -1,0 +1,53 @@
+# SecureRAG v1.0 Default Configuration
+
+vector_db:
+  type: qdrant
+  path: ~/.secure-rag/vector_db
+  collection_settings:
+    vector_size: 1024
+    distance: cosine
+
+embeddings:
+  provider: local  # Options: local, openai, anthropic
+  model: BAAI/bge-large-en-v1.5
+  batch_size: 32
+  device: auto  # auto, cpu, cuda, mps
+  # For cloud providers (optional):
+  # openai_api_key: ${OPENAI_API_KEY}
+  # anthropic_api_key: ${ANTHROPIC_API_KEY}
+
+reranking:
+  enabled: true
+  model: BAAI/bge-reranker-large
+  top_n_rerank: 20
+  device: auto
+
+chunking:
+  strategy: semantic
+  min_chunk_size: 256
+  max_chunk_size: 1024
+  chunk_overlap: 100
+  include_context: true
+
+search:
+  default_top_k: 5
+  min_confidence: 0.0
+
+security:
+  encryption_enabled: true
+  backup_encryption: true
+  # Password derivation settings
+  pbkdf2_iterations: 100000
+
+storage:
+  data_dir: ~/.secure-rag
+  backup_dir: ~/.secure-rag/backups
+  max_backup_age_days: 90
+  models_dir: ~/.secure-rag/models
+
+logging:
+  level: INFO
+  log_file: ~/.secure-rag/logs/secure-rag.log
+  query_history: true
+  max_history_entries: 10000
+  max_log_file_size_mb: 100
