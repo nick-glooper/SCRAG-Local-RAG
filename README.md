@@ -1,5 +1,17 @@
 # SecureRAG v1.0
 
+> **DEPRECATED**: This project has been superseded by the unified [kbase-manager](https://github.com/nick-glooper/kbase-manager) system.
+>
+> The kbase-manager project provides:
+> - **KB Manager GUI** - Desktop app for knowledge base management
+> - **kb-mcp** - Unified MCP server for documents and conversations
+> - **kb-cli** - Command-line interface for automation
+> - **Systemd integration** - Automatic background sync
+>
+> All new development is happening in kbase-manager. This repository is archived for reference only.
+
+---
+
 **Local, Privacy-First RAG System for Claude Desktop**
 
 SecureRAG brings NotebookLM-like functionality to Claude Desktop via the Model Context Protocol (MCP). Perfect for professionals who cannot use cloud services: government contractors, legal professionals, healthcare workers, and financial analysts.
